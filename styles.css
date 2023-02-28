@@ -8,6 +8,7 @@
 
 *:root {
   --primary-color: rgb(31, 31, 31);
+  --secondary-color: rgb(236, 236, 236);
 }
 
 body {
@@ -31,37 +32,8 @@ body {
   height: 700px;
   border-radius: 50px;
   padding: 1rem;
-}
-
-/* Holiday Select */
-.holiday-select-container {
-  background-image: url(/images-resources/drop-down-background-large.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 250px;
-  height: 600px;
-  margin-left: 2rem;
-  border-radius: 10px;
-  overflow: scroll;
-  padding: 0.5rem;
-  line-height: 1.4rem;
-}
-
-ul.holiday-list {
-  margin: 0;
-  padding: 0;
-}
-
-ul.holiday-list li {
-  list-style: none;
-  text-decoration: none;
-  padding: 0;
-  margin: 0;
-}
-
-.collapse-list {
-  height: 20px;
+  position: relative;
+  margin-right: 250px;
 }
 
 /* Countdown */
@@ -98,4 +70,91 @@ p {
 .time-unit p:nth-of-type(2) {
   width: 50px;
   text-align: center;
+}
+
+/* Holiday Select */
+.holiday-list-wrapper {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 175px;
+  position: absolute;
+  top: -15px;
+  right: -270px;
+}
+
+.holiday-select-container {
+  background-image: url(/images-resources/drop-down-background-large.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 200px;
+  height: 600px;
+  margin: 0;
+  border-radius: 10px;
+  overflow: scroll;
+  padding: 0.5rem;
+  line-height: 1.4rem;
+  transition: height 0.2s, width 0.2s;
+}
+
+ul.holiday-list {
+  margin: 0;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+ul.holiday-list li {
+  text-align: center;
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0 0 10px 1rem;
+  border-left: 3px solid var(--primary-color);
+  width: 60%;
+  font-weight: 500;
+  transition: padding-left 0.1s linear;
+  border-radius: 0;
+}
+
+ul.holiday-list li:hover {
+  cursor: pointer;
+  padding-left: 5px;
+  border-radius: 2px 0 0 2px;
+}
+
+.collapse-list {
+  height: 40px;
+  width: 40px;
+  overflow: hidden;
+}
+
+.collapse-list ul.holiday-list {
+  display: none;
+}
+
+.show-holidays {
+  color: var(--secondary-color);
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 1.4rem;
+  margin: 1rem 0;
+  position: relative;
+  top: 51px;
+  left: 1px;
+  transition: top 0.5s, color 0.3s;
+  color: var(--primary-color);
+}
+
+.show-holidays.float {
+  top: 10px;
+  color: var(--secondary-color);
+}
+
+.show-holidays:hover {
+  cursor: pointer;
 }
