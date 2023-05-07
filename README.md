@@ -1,2 +1,2 @@
 # countdown-app
-Very simple app that displays a countdown to the New Year.
+Very simple app that displays a countdown to a list of several differen holidays.
